@@ -1,0 +1,13 @@
+{
+  "page_title": "Health Blog",
+  "page_subtitle": "Medical insights, practical health tips, and resident experiences.",
+  "posts": [
+    {
+      "title": "Combating Stress Among Healthcare Workers",
+      "date": "2026-02-01T00:00:00.000Z",
+      "thumbnail": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1200&fit=crop",
+      "category": "Health Tips",
+      "body": "Occupational burnout is a critical issue in the healthcare sector. Constant exposure to high-stress environments, long operational hours, and the emotional weight of patient care can take a significant toll on practitioners' mental health.\n\nIn this post, we discuss strategies for identifying the early symptoms of burnout and actionable steps—ranging from mindfulness techniques, protected sleep schedules, to requesting peer support—that resident doctors can seamlessly implement into their rigid routines.\n\nIt remains the core mission of the ARD to ensure the holistic wellbeing of our members. Remember, to provide the best care, the clinician must also be cared for."
+    }
+  ]
+}

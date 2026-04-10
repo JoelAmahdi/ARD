@@ -1,0 +1,52 @@
+{
+  "page_title": "About ARD OAUTHC",
+  "page_subtitle": "Our history, our people, and our vision for the future.",
+  "history": "The Association of Resident Doctors, Obafemi Awolowo University Teaching Hospitals Complex (ARD OAUTHC) chapter, has a long and storied history of advocating for improved healthcare delivery and the welfare of its members.\n\nEstablished decades ago, the association has grown into a formidable body within the healthcare sector, championing the rights of resident doctors and ensuring the highest standards of medical practice across the region. We are continually dedicated to ensuring the integrity of the profession.",
+  "vision": "To be the leading resident doctors' association in Nigeria, driving excellence in healthcare delivery, research, and safeguarding the comprehensive welfare of our members.",
+  "mission": "Embodying professionalism, facilitating continuous medical education, and engaging in impactful community health service, while advocating for a sustainable and equitable healthcare system.",
+  "executives": [
+    {
+      "name": "Dr. A. Adebayo",
+      "role": "President",
+      "avatar": ""
+    },
+    {
+      "name": "Dr. B. Okon",
+      "role": "Vice President",
+      "avatar": ""
+    },
+    {
+      "name": "Dr. C. Nwosu",
+      "role": "Secretary General",
+      "avatar": ""
+    },
+    {
+      "name": "Dr. D. Ibrahim",
+      "role": "Treasurer",
+      "avatar": ""
+    }
+  ],
+  "members": [
+    {
+      "name": "Dr. John Doe",
+      "achievement": "Outstanding Service Award 1990"
+    },
+    {
+      "name": "Dr. Jane Smith",
+      "achievement": "Former President & Policy Advocate"
+    },
+    {
+      "name": "Dr. Michael Johnson",
+      "achievement": "Pioneer of the Health Trust"
+    },
+    {
+      "name": "Chief Benefactor A.O.",
+      "achievement": "Community Health Sponsor (Honourary)"
+    },
+    {
+      "name": "Prof. O. Williams",
+      "achievement": "Medical Education Partner (Honourary)"
+    }
+  ],
+  "constitution_pdf": ""
+}

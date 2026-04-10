@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+venv/
+env/
+.env
+
+# Don't push API keys or sensitive configurations!
+.env
+credentials.json
+token.json
+birthdays.db
+uploads/

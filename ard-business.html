@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARD Business Directory</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=6" />
+    <style>
+      .business-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 0 20px;
+      }
+      .biz-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 250px;
+        border-top: 5px solid var(--yellow-normal);
+      }
+      .biz-card:hover { 
+        transform: translateY(-5px); 
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+      }
+      .biz-title { 
+        font-size: 26px; 
+        font-weight: 700; 
+        color: var(--blue-dark); 
+        margin-bottom: 12px; 
+      }
+      .biz-desc { 
+        font-size: 16px; 
+        color: var(--text-dark); 
+        margin-bottom: 25px; 
+        line-height: 1.6; 
+      }
+      .biz-contact {
+        display: inline-block;
+        background: transparent;
+        border: 1px solid var(--text-dark);
+        color: var(--text-dark);
+        padding: 12px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        text-align: center;
+        transition: background 0.3s, color 0.3s;
+      }
+      .biz-contact:hover { 
+        background: var(--text-dark); 
+        color: #fff; 
+      }
+      
+      .hero-mini {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0px 0px;
+        gap: 30px;
+        position: relative;
+        width: 100%;
+        background: linear-gradient(180deg, #cde3ff 0%, #ffffff 80%);
+        padding-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="home-page" style="height: auto; padding-bottom: 0;">
+      <!-- Hero Section Mini -->
+      <div class="hero-mini">
+        <nav class="nav">
+          <a href="index.html" class="logo"></a>
+          <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <div class="navigation-bar">
+            <div class="dropdown">
+              <a href="about.html" class="nav-link">About Us</a>
+              <div class="dropdown-content">
+                <a href="about.html#history">History Roll</a>
+                <a href="about.html#life-members">Life Members</a>
+                <a href="about.html#honourary">Honourary Members</a>
+                <a href="about.html#vision-mission">Vision & Mission</a>
+                <a href="about.html#constitution">Constitution</a>
+                <a href="about.html#executive">Executive Committee</a>
+              </div>
+            </div>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="news.html" class="nav-link">News & Publications</a>
+            <div class="dropdown">
+              <a href="services.html" class="nav-link" style="color: var(--blue-dark); text-shadow: 0px 4px 10px rgba(11, 37, 112, 0.15);">Services</a>
+              <div class="dropdown-content">
+                <a href="services.html#ecg">ECG Services</a>
+                <a href="services.html#hire-bus">Hire a Bus</a>
+                <a href="services.html#business">ARD Business</a>
+              </div>
+            </div>
+            <a href="blog.html" class="nav-link">Health Blog</a>
+          </div>
+        </nav>
+
+        <div class="details" style="height: auto; justify-content: center; margin-top: 50px;">
+          <h1 class="title" data-aos="zoom-in" style="font-size: 70px;">ARD Business</h1>
+          <p class="subtitle" data-aos="fade-up" data-aos-delay="100">Professional businesses and services for hire.</p>
+        </div>
+      </div>
+
+      <div class="business-grid">
+        <div class="biz-card" data-aos="fade-up">
+          <div>
+            <div class="biz-title">MediTech Instruments</div>
+            <div class="biz-desc">Premium quality medical supplies and specialized diagnostic tools tailored for modern healthcare professionals.</div>
+          </div>
+          <a href="tel:+2348000000001" class="biz-contact">&#128222; Contact Vendor</a>
+        </div>
+        
+        <div class="biz-card" data-aos="fade-up" data-aos-delay="100">
+          <div>
+            <div class="biz-title">OAU Prime Logistics</div>
+            <div class="biz-desc">Professional logistics and transportation services perfectly suited to move medical equipment safely.</div>
+          </div>
+          <a href="tel:+2348000000002" class="biz-contact">&#128222; Reach Logistics</a>
+        </div>
+        
+        <div class="biz-card" data-aos="fade-up" data-aos-delay="200">
+          <div>
+            <div class="biz-title">Apex Event Planners</div>
+            <div class="biz-desc">World-class event planning for medical conferences, department seminars, and organizational retreats.</div>
+          </div>
+          <a href="tel:+2348000000003" class="biz-contact">&#128222; Hire Planners</a>
+        </div>
+        
+        <div class="biz-card" data-aos="fade-up" data-aos-delay="300">
+          <div>
+            <div class="biz-title">HealthTech Solutions</div>
+            <div class="biz-desc">IT infrastructure and software consultancy tailored to optimize hospital practice flows and secure patient data.</div>
+          </div>
+          <a href="tel:+2348000000004" class="biz-contact">&#128222; Call Consult</a>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 40px; margin-bottom: 80px;" data-aos="fade-up">
+        <a href="services.html" class="btn-learn" style="border: 1px solid var(--text-dark); display: inline-flex; align-items: center; justify-content: center; margin: 0 auto;">&larr; Back to Services</a>
+      </div>
+      
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

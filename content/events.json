@@ -1,0 +1,32 @@
+{
+  "watermark_title": "EVENTS",
+  "events_list": [
+    {
+      "title": "House Officers Orientation Program",
+      "date": "2026-02-28T10:00:00.000Z",
+      "location": "Main Auditorium",
+      "description": "A comprehensive orientation for incoming house officers covering facility tours, clinical guidelines, and administrative procedures at OAUTHC.",
+      "image": "media/media__1772320921058.jpg",
+      "status": "Upcoming",
+      "calendar_link": "https://calendar.google.com/calendar/render?action=TEMPLATE&text=House+Officers+Orientation+Program&dates=20260228T100000Z/20260228T140000Z&details=A+comprehensive+orientation+for+incoming+house+officers.&location=Main+Auditorium,+OAUTHC"
+    },
+    {
+      "title": "Annual General Meeting (AGM)",
+      "date": "2025-12-15T00:00:00.000Z",
+      "location": "",
+      "description": "The 2025 Annual General Meeting where key leadership transitions and policy amendments were reviewed.",
+      "image": "media/media__1772320921260.jpg",
+      "status": "Concluded",
+      "calendar_link": ""
+    },
+    {
+      "title": "Health Week & Medical Outreach",
+      "date": "2025-11-10T00:00:00.000Z",
+      "location": "",
+      "description": "Free medical consulting and health sensitization provided to surrounding communities by our resident doctors.",
+      "image": "media/media__1772320921300.jpg",
+      "status": "Concluded",
+      "calendar_link": ""
+    }
+  ]
+}

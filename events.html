@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - ARD OAUTHC</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=4" />
+  </head>
+  <body>
+    <div class="home-page page-events">
+      
+      <!-- Hero Section & Navigation -->
+      <div class="hero about-hero">
+        <!-- Navigation -->
+        <nav class="nav">
+          <a href="index.html" class="logo"></a>
+          <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <div class="navigation-bar">
+            <div class="dropdown">
+              <a href="about.html" class="nav-link">About Us</a>
+              <div class="dropdown-content">
+                <a href="about.html#history">History Roll</a>
+                <a href="about.html#life-members">Life Members</a>
+                <a href="about.html#honourary">Honourary Members</a>
+                <a href="about.html#vision-mission">Vision & Mission</a>
+                <a href="about.html#constitution">Constitution</a>
+                <a href="about.html#executive">Executive Committee</a>
+              </div>
+            </div>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="news.html" class="nav-link">News & Publications</a>
+            <div class="dropdown">
+              <a href="services.html" class="nav-link">Services</a>
+              <div class="dropdown-content">
+                <a href="services.html#ecg">ECG Services</a>
+                <a href="services.html#hire-bus">Hire a Bus</a>
+                <a href="services.html#business">ARD Business</a>
+              </div>
+            </div>
+            <a href="blog.html" class="nav-link">Health Blog</a>
+          </div>
+        </nav>
+
+        <div class="details" style="height: 300px; justify-content: center; margin-top: 50px;">
+          <h1 class="title" data-aos="zoom-in">Events Calendar</h1>
+          <p class="subtitle" data-aos="fade-up" data-aos-delay="100">Stay updated on our latest seminars, general meetings, and community outreaches.</p>
+        </div>
+      </div>
+
+      <!-- Main Events Content -->
+      <main class="events-page-container">
+          
+        <div id="dynamic-events-container">
+            <p style="text-align: center; font-size: 18px; color: var(--blue-dark); padding: 50px;">Loading events...</p>
+        </div>
+
+        <!-- CMS JSON Fetch Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                fetch('content/events.json', { cache: 'no-store' })
+                    .then(response => {
+                        if (!response.ok) throw new Error("JSON missing");
+                        return response.json();
+                    })
+                    .then(data => {
+                        const container = document.getElementById('dynamic-events-container');
+                        container.innerHTML = '';
+                        
+                        if (!data.events_list || data.events_list.length === 0) {
+                            container.innerHTML = '<p style="text-align: center; font-size: 18px;">No events scheduled.</p>';
+                            return;
+                        }
+
+                        // Filter by status
+                        const upcoming = data.events_list.filter(e => e.status === 'Upcoming');
+                        const concluded = data.events_list.filter(e => e.status === 'Concluded');
+
+                        let html = '';
+
+                        // Upcoming
+                        if (upcoming.length > 0) {
+                            html += '<section class="events-category"><h2>Upcoming Events</h2>';
+                            upcoming.forEach(event => {
+                                const d = new Date(event.date);
+                                const dateStr = d.toLocaleDateString('en-GB', { month: 'short', day: 'numeric', year: 'numeric' });
+                                const timeStr = d.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+                                
+                                html += `
+                                <div class="event-item-card">
+                                    ${event.image ? `<div class="event-img" style="background-image: url('${event.image}');"></div>` : '<div class="event-img" style="background:#e0e0e0;"></div>'}
+                                    <div class="event-body">
+                                        <div class="event-meta">
+                                            <span class="badge upcoming">Upcoming</span>
+                                            <span>${dateStr}</span> | <span>${timeStr}</span> | <span>${event.location || 'TBA'}</span>
+                                        </div>
+                                        <h3>${event.title}</h3>
+                                        <p class="event-desc" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">${event.description || ''}</p>
+                                        <div style="margin-top: 15px; display: flex; gap: 15px; align-items: center;">
+                                            <a href="event-details.html?title=${encodeURIComponent(event.title)}" class="btn-learn" style="display: inline-block; padding: 8px 16px; font-size: 14px; border: 1px solid var(--blue-dark); color: var(--blue-dark); text-decoration: none; border-radius: 4px; border-width: 1px;">Read Full Details</a>
+                                            ${event.calendar_link ? `
+                                            <a href="${event.calendar_link}" target="_blank" class="btn-calendar">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                                Add to Calendar
+                                            </a>` : ''}
+                                        </div>
+                                    </div>
+                                </div>`;
+                            });
+                            html += '</section>';
+                        }
+
+                        // Concluded
+                        if (concluded.length > 0) {
+                            html += '<section class="events-category"><h2>Concluded Events</h2>';
+                            concluded.forEach(event => {
+                                const d = new Date(event.date);
+                                const dateStr = d.toLocaleDateString('en-GB', { month: 'short', day: 'numeric', year: 'numeric' });
+                                
+                                html += `
+                                <div class="event-item-card concluded">
+                                    ${event.image ? `<div class="event-img" style="background-image: url('${event.image}');"></div>` : '<div class="event-img" style="background:#e0e0e0;"></div>'}
+                                    <div class="event-body">
+                                        <div class="event-meta">
+                                            <span class="badge past">Concluded</span>
+                                            <span>${dateStr}</span>
+                                        </div>
+                                        <h3>${event.title}</h3>
+                                        <p class="event-desc" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">${event.description || ''}</p>
+                                        <div style="margin-top: 15px;">
+                                            <a href="event-details.html?title=${encodeURIComponent(event.title)}" class="btn-learn" style="display: inline-block; padding: 8px 16px; font-size: 14px; border: 1px solid var(--blue-dark); color: var(--blue-dark); text-decoration: none; border-radius: 4px; border-width: 1px;">Read Full Details</a>
+                                        </div>
+                                    </div>
+                                </div>`;
+                            });
+                            html += '</section>';
+                        }
+
+                        container.innerHTML = html;
+                    })
+                    .catch(err => {
+                        console.error('Error loading CMS content:', err);
+                        document.getElementById('dynamic-events-container').innerHTML = '<p style="text-align: center; color: red;">Failed to load events data.</p>';
+                    });
+            });
+        </script>
+
+      </main>
+
+      <!-- Subscribe Footer -->
+      <section class="subscribe-section" data-aos="fade-up">
+        <div class="footer-container">
+          
+          <!-- LEFT SIDE: Logo and Navigation -->
+          <div class="footer-left">
+            <div class="footer-logo"></div>
+            <ul class="footer-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="news.html">News & Publications</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="blog.html">Health Blog</a></li>
+            </ul>
+          </div>
+          
+          <!-- RIGHT SIDE: Subscribe, Donate, Socials -->
+          <div class="footer-right">
+            <div class="subscribe-content">
+              <form class="subscribe-form" action="https://formspree.io/f/meelweoz" method="POST">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  class="input-subscribe"
+                  required
+                />
+                <button type="submit" class="btn-subscribe">Subscribe</button>
+              </form>
+              
+              <!-- Donation Button -->
+              <div class="donate-wrapper" style="display: flex; justify-content: center; align-items: center;">
+                <a href="#" class="btn-donate">Donate Now</a>
+              </div>
+              <div class="socials">
+                <a href="https://x.com/ArdOauthc" target="_blank" rel="noopener noreferrer" class="social-link">
+                  <img class="social-x-logo" src="media/x-logo.png" alt="X Logo">
+                </a>
+                <a href="https://youtube.com/@ArdOauthc" target="_blank" rel="noopener noreferrer" class="social-link">
+                  <svg width="46" height="46" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social-yt-logo">
+                    <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.86-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z" fill="#FF0000"/>
+                    <polygon points="10,15 15.5,12 10,9" fill="white"/>
+                  </svg>
+                </a>
+                <span class="social-text">ardoauthc</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    </div>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

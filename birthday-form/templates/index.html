@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Schema</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <div class="form-wrapper glass">
+            <header>
+                <h1>Event Schema</h1>
+                <p>Submit an event. We'll add it to the admin list for syncing.</p>
+            </header>
+            
+            <form id="eventForm" enctype="multipart/form-data">
+                <div class="input-group">
+                    <label for="event_type_select">Event Type</label>
+                    <select id="event_type_select" name="event_type_select" required>
+                        <option value="Birthday" selected>Birthday</option>
+                        <option value="Marriage Anniversary">Marriage Anniversary</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="input-group" id="custom_event_group" style="display: none;">
+                    <label for="custom_event">Specify Event Name</label>
+                    <input type="text" id="custom_event" placeholder="E.g., Graduation Party">
+                </div>
+
+                <div class="input-group">
+                    <label for="name">Person's Name</label>
+                    <input type="text" id="name" name="name" placeholder="E.g., Jane Doe" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="position">Department / Position held</label>
+                    <input type="text" id="position" name="position" placeholder="E.g., HR / Manager">
+                </div>
+
+                <div class="input-group">
+                    <label for="whatsapp">WhatsApp Number</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="E.g., +1234567890">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="E.g., jane@example.com">
+                </div>
+
+                <div class="input-group">
+                    <label for="date">Event Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <div class="input-group file-upload">
+                    <label for="picture" class="file-label">
+                        <span class="file-text">Upload a Picture</span>
+                        <input type="file" id="picture" name="picture" accept="image/*" required>
+                        <div class="preview-container">
+                            <img id="imagePreview" src="#" alt="Image Preview" style="display: none;">
+                        </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Submit Event</span>
+                    <div class="loader" style="display: none;"></div>
+                </button>
+                <div id="statusMessage" class="status-message"></div>
+            </form>
+            <div style="margin-top: 20px; text-align: center;">
+                <a href="{{ url_for('admin') }}" class="admin-link">Admin Dashboard ➔</a>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

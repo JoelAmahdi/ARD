@@ -1,0 +1,30 @@
+{
+  "page_title": "Our Services",
+  "page_subtitle": "Explore the professional services we provide.",
+  "services_list": [
+    {
+      "name": "ECG Services",
+      "description": "We offer professional and accurate Electrocardiogram (ECG) services. Our state-of-the-art equipment and highly trained medical staff ensure reliable cardiac monitoring and diagnostics for all patients.",
+      "image": "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=353&fit=crop",
+      "cta_text": "📞 Contact Us",
+      "cta_link": "tel:+2340000000000",
+      "theme": "light-yellow"
+    },
+    {
+      "name": "ARD Business",
+      "description": "Explore our directory of professional businesses and services for hire. Find trusted partners for your healthcare, event, or organizational needs.",
+      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=353&fit=crop",
+      "cta_text": "View Businesses",
+      "cta_link": "ard-business.html",
+      "theme": "dark-yellow"
+    },
+    {
+      "name": "Hire a Bus",
+      "description": "Need reliable transportation for medical events, staff retreats, or conferences? Our fleet is available for charter. We offer comfortable, safe, and professional bus hire services tailored to your needs.",
+      "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=353&fit=crop",
+      "cta_text": "📞 Contact for Booking",
+      "cta_link": "tel:+2340000000000",
+      "theme": "light-yellow"
+    }
+  ]
+}
