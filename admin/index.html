@@ -1,12 +1,192 @@
 <!doctype html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager</title>
-</head>
-<body>
-  <!-- Include the script that builds the page and powers Decap CMS -->
-  <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager - ARD OAUTHC</title>
+  </head>
+  <body>
+    <!-- Decap CMS with inline config (avoids config.yml fetch issues on Vercel) -->
+    <script>window.CMS_MANUAL_INIT = true;</script>
+    <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+    <script>
+      CMS.init({
+        config: {
+          backend: {
+            name: 'github',
+            repo: 'JoelAmahdi/ARD',
+            branch: 'main',
+            base_url: 'https://ard-ebon.vercel.app',
+            auth_endpoint: 'api/auth'
+          },
+          media_folder: 'media',
+          public_folder: 'media',
+          collections: [
+            {
+              name: 'content',
+              label: 'Site Content',
+              files: [
+                {
+                  label: 'News & Publications',
+                  name: 'news',
+                  file: 'content/news.json',
+                  description: 'Manage all the blog posts and news articles',
+                  fields: [
+                    { label: 'Page Title', name: 'page_title', widget: 'string', default: 'News & Publications' },
+                    {
+                      label: 'Posts', name: 'posts', widget: 'list',
+                      fields: [
+                        { label: 'Title', name: 'title', widget: 'string' },
+                        { label: 'Publish Date', name: 'date', widget: 'datetime' },
+                        { label: 'Featured Image', name: 'thumbnail', widget: 'image', required: false },
+                        { label: 'Tag', name: 'tag', widget: 'string', default: 'Official News' },
+                        { label: 'Body', name: 'body', widget: 'markdown' }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  label: 'Events',
+                  name: 'events',
+                  file: 'content/events.json',
+                  description: 'Manage upcoming and concluded events',
+                  fields: [
+                    { label: 'Events Watermark Title', name: 'watermark_title', widget: 'string', default: 'EVENTS' },
+                    {
+                      label: 'Events List', name: 'events_list', widget: 'list',
+                      fields: [
+                        { label: 'Title', name: 'title', widget: 'string' },
+                        { label: 'Date & Time', name: 'date', widget: 'datetime' },
+                        { label: 'Location', name: 'location', widget: 'string', required: false },
+                        { label: 'Description', name: 'description', widget: 'text' },
+                        { label: 'Image', name: 'image', widget: 'image', required: false },
+                        { label: 'Status', name: 'status', widget: 'select', options: ['Upcoming', 'Concluded'] },
+                        { label: 'Calendar Link', name: 'calendar_link', widget: 'string', required: false }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  label: 'Health Blog',
+                  name: 'health_blog',
+                  file: 'content/blog.json',
+                  description: 'Manage health tips and blog posts',
+                  fields: [
+                    { label: 'Page Title', name: 'page_title', widget: 'string', default: 'Health Blog' },
+                    { label: 'Page Subtitle', name: 'page_subtitle', widget: 'string', default: 'Medical insights, practical health tips, and resident experiences.' },
+                    {
+                      label: 'Posts', name: 'posts', widget: 'list',
+                      fields: [
+                        { label: 'Title', name: 'title', widget: 'string' },
+                        { label: 'Publish Date', name: 'date', widget: 'datetime' },
+                        { label: 'Featured Image', name: 'thumbnail', widget: 'image', required: false },
+                        { label: 'Category', name: 'category', widget: 'string', default: 'Health Tips' },
+                        { label: 'Body', name: 'body', widget: 'markdown' }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  label: 'About Page',
+                  name: 'about',
+                  file: 'content/about.json',
+                  description: 'Manage the About Us page content, executives, and members',
+                  fields: [
+                    { label: 'Page Title', name: 'page_title', widget: 'string', default: 'About ARD OAUTHC' },
+                    { label: 'Page Subtitle', name: 'page_subtitle', widget: 'string', default: 'Our history, our people, and our vision for the future.' },
+                    { label: 'History Roll', name: 'history', widget: 'markdown' },
+                    { label: 'Vision', name: 'vision', widget: 'text' },
+                    { label: 'Mission', name: 'mission', widget: 'text' },
+                    {
+                      label: 'Executive Committee', name: 'executives', widget: 'list',
+                      fields: [
+                        { label: 'Name', name: 'name', widget: 'string' },
+                        { label: 'Role', name: 'role', widget: 'string' },
+                        { label: 'Avatar Image', name: 'avatar', widget: 'image', required: false }
+                      ]
+                    },
+                    {
+                      label: 'Life & Honourary Members', name: 'members', widget: 'list',
+                      fields: [
+                        { label: 'Name', name: 'name', widget: 'string' },
+                        { label: 'Achievement/Role', name: 'achievement', widget: 'string' }
+                      ]
+                    },
+                    { label: 'Constitution PDF File', name: 'constitution_pdf', widget: 'file', required: false }
+                  ]
+                },
+                {
+                  label: 'Home Page',
+                  name: 'home',
+                  file: 'content/home.json',
+                  description: 'Manage the hero section and marquees on the home page',
+                  fields: [
+                    { label: 'Hero Subtitle', name: 'hero_subtitle', widget: 'string' },
+                    { label: 'Hero Title', name: 'hero_title', widget: 'string' },
+                    { label: 'Events Marquee Text', name: 'events_marquee_text', widget: 'string', required: false },
+                    { label: 'News Marquee Text', name: 'news_marquee_text', widget: 'string', required: false }
+                  ]
+                },
+                {
+                  label: 'Services Page',
+                  name: 'services',
+                  file: 'content/services.json',
+                  description: 'Manage the services offered',
+                  fields: [
+                    { label: 'Page Title', name: 'page_title', widget: 'string', default: 'Our Services' },
+                    { label: 'Page Subtitle', name: 'page_subtitle', widget: 'text', default: 'Explore the professional services we provide.' },
+                    {
+                      label: 'Services List', name: 'services_list', widget: 'list',
+                      fields: [
+                        { label: 'Service Name', name: 'name', widget: 'string' },
+                        { label: 'Description', name: 'description', widget: 'text' },
+                        { label: 'Image', name: 'image', widget: 'image', required: false },
+                        { label: 'Call to Action Text', name: 'cta_text', widget: 'string' },
+                        { label: 'Call to Action Link (or Phone)', name: 'cta_link', widget: 'string' },
+                        { label: 'Theme', name: 'theme', widget: 'select', options: ['light-yellow', 'dark-yellow'] }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  label: 'Gallery Page',
+                  name: 'gallery',
+                  file: 'content/gallery.json',
+                  description: "Manage the site's image gallery",
+                  fields: [
+                    { label: 'Page Title', name: 'page_title', widget: 'string', default: 'Our Gallery' },
+                    {
+                      label: 'Image Groups', name: 'image_groups', widget: 'list',
+                      fields: [
+                        { label: 'Group Caption', name: 'caption', widget: 'string', hint: 'E.g., AGM 2026, Outreach Program' },
+                        { label: 'Event Date', name: 'date', widget: 'string', required: false, hint: 'E.g., December 15, 2025' },
+                        {
+                          label: 'Images', name: 'images', widget: 'list',
+                          summary: '{{fields.image}}',
+                          field: { label: 'Image', name: 'image', widget: 'image' }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  label: 'Global Site Config',
+                  name: 'site_config',
+                  file: 'content/site_config.json',
+                  description: 'Manage footer information, social links, etc.',
+                  fields: [
+                    { label: 'X (Twitter) Link', name: 'twitter_link', widget: 'string' },
+                    { label: 'X (Twitter) Username', name: 'twitter_username', widget: 'string' },
+                    { label: 'YouTube Link', name: 'youtube_link', widget: 'string' },
+                    { label: 'YouTube Username', name: 'youtube_username', widget: 'string' },
+                    { label: 'Contact Email', name: 'contact_email', widget: 'string', default: 'info@ardoauthc.com' }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      });
+    </script>
+  </body>
 </html>
