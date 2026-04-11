@@ -80,7 +80,7 @@
                             const article = document.createElement('article');
                             article.className = 'blog-post';
                             article.innerHTML = `
-                                ${post.thumbnail ? `<div class="post-img" style="background-image: url('${post.thumbnail}');"></div>` : ''}
+                            <div class="post-img" style="background-image: url('${post.thumbnail || 'media/news-placeholder.jpg'}');"></div>
                                 <div class="post-content">
                                     <span class="post-meta">${postDate} &bull; ${post.tag || 'Official News'}</span>
                                     <h2 class="post-title">${post.title}</h2>
