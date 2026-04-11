@@ -1553,6 +1553,11 @@ a.btn-learn {
     right: 0;
   }
   
+  /* Hero must have min-height so content is always visible on mobile */
+  .hero {
+    min-height: 80vh;
+  }
+
   /* Hero Details */
   .title {
     font-size: 45px;

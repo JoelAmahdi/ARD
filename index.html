@@ -260,8 +260,14 @@
       });
     </script>
     <script>
+      // Prevent browser from restoring previous scroll position
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+    </script>
+    <script>
       document.addEventListener('DOMContentLoaded', () => {
-        // Fetch Home config
+        // Always start at top on page load
+        window.scrollTo(0, 0);
         fetch('content/home.json', { cache: 'no-store' })
           .then(r => r.ok ? r.json() : null)
           .then(data => {
