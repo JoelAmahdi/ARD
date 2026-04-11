@@ -1,0 +1,29 @@
+{
+  "page_title": "Photo Gallery",
+  "image_groups": [
+    {
+      "caption": "House Officers Orientation Program",
+      "date": "February 28, 2026",
+      "images": [
+        "media/whatsapp-image-2026-03-27-at-22.37.17.jpeg",
+        "media/whatsapp-image-2026-03-27-at-22.37.16-2-.jpeg",
+        "media/whatsapp-image-2026-03-27-at-22.37.16-1-.jpeg",
+        "media/whatsapp-image-2026-03-27-at-22.37.16.jpeg",
+        "media/whatsapp-image-2026-03-27-at-22.37.15-2-.jpeg",
+        "media/whatsapp-image-2026-03-27-at-22.37.15-1-.jpeg",
+        "media/whatsapp-image-2026-03-27-at-22.37.15.jpeg",
+        "media/whatsapp-image-2026-03-27-at-22.37.14.jpeg",
+        "media/whatsapp-image-2026-03-27-at-22.37.14-1-.jpeg"
+      ]
+    },
+    {
+      "caption": "Grant Prize",
+      "images": [
+        "media/whatsapp-image-2026-04-07-at-15.00.08.jpeg",
+        "media/whatsapp-image-2026-04-07-at-15.00.05.jpeg",
+        "media/whatsapp-image-2026-04-07-at-15.00.04.jpeg",
+        "media/whatsapp-image-2026-04-07-at-15.00.03.jpeg"
+      ]
+    }
+  ]
+}
