@@ -1,192 +1,400 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Content Manager - ARD OAUTHC</title>
+    <title>ARD OAUTHC - Association of Resident Doctors</title>
+    <!-- We'll use a fallback font if Gilroy is unavailable. Outfit matches the clean modern aesthetic -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=7" />
   </head>
   <body>
-    <!-- Decap CMS with inline config (avoids config.yml fetch issues on Vercel) -->
-    <script>window.CMS_MANUAL_INIT = true;</script>
-    <script src="https://unpkg.com/decap-cms@^3.1.2/dist/decap-cms.js"></script>
+    <div class="home-page">
+      <!-- Hero Section -->
+      <div class="hero">
+        <!-- Navigation -->
+        <nav class="nav">
+          <div class="logo"></div>
+          <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <div class="navigation-bar">
+            <div class="dropdown">
+              <a href="about.html" class="nav-link">About Us</a>
+              <div class="dropdown-content">
+                <a href="about.html#history">History Roll</a>
+                <a href="about.html#life-members">Life Members</a>
+                <a href="about.html#honourary">Honourary Members</a>
+                <a href="about.html#vision-mission">Vision & Mission</a>
+                <a href="about.html#constitution">Constitution</a>
+                <a href="about.html#executive">Executive Committee</a>
+              </div>
+            </div>
+            <a href="events.html" class="nav-link">Events</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="news.html" class="nav-link">News & Publications</a>
+            <div class="dropdown">
+              <a href="services.html" class="nav-link">Services</a>
+              <div class="dropdown-content">
+                <a href="services.html#ecg">ECG Services</a>
+                <a href="services.html#hire-bus">Hire a Bus</a>
+                <a href="services.html#business">ARD Business</a>
+              </div>
+            </div>
+            <a href="blog.html" class="nav-link">Health Blog</a>
+          </div>
+        </nav>
+
+        <!-- Details -->
+        <div class="details">
+          <div class="frame-4" data-aos="fade-up">
+            <p class="subtitle">
+              Official website of the Association of Resident Doctors Obafemi
+              Awolowo University Teaching Hospital complex
+            </p>
+            <h1 class="title">
+              ARD - OAUTHC
+            </h1>
+          </div>
+          <div class="frame-5" data-aos="zoom-in" data-aos-delay="200">
+            <div class="main-image"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Events Section -->
+      <section id="events" class="events-section">
+        <div class="marquee-banner bg-yellow marquee-container" data-aos="fade-in">
+          <div class="marquee-content">
+            <div class="ellipse-2"></div>
+            <h4 class="marquee-text">UPCOMING EVENTS - 28TH/FEB/2026</h4>
+            <div class="ellipse-2"></div>
+            <h4 class="marquee-text">UPCOMING EVENTS - 28TH/FEB/2026</h4>
+            <div class="ellipse-2"></div>
+            <h4 class="marquee-text">UPCOMING EVENTS - 28TH/FEB/2026</h4>
+            <!-- Dunplicate for smooth scrolling -->
+            <div class="ellipse-2"></div>
+            <h4 class="marquee-text">UPCOMING EVENTS - 28TH/FEB/2026</h4>
+            <div class="ellipse-2"></div>
+            <h4 class="marquee-text">UPCOMING EVENTS - 28TH/FEB/2026</h4>
+            <div class="ellipse-2"></div>
+            <h4 class="marquee-text">UPCOMING EVENTS - 28TH/FEB/2026</h4>
+          </div>
+        </div>
+
+        <h2 class="events-watermark">
+          EVENTS
+        </h2>
+
+        <div class="events-list">
+          <!-- Event Card 1 (Dark Yellow) -->
+          <div class="event-card dark-yellow" data-aos="fade-up">
+            <div class="event-image img-1"></div>
+            <div class="event-content">
+              <div class="event-date">
+                <span class="icon-vector"></span>
+                <p>28th Saturday, February, 2026</p>
+              </div>
+              <h3 class="event-title">House Officers Orientation Program</h3>
+              <p class="event-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <a href="events.html" class="btn-learn">Learn more</a>
+            </div>
+          </div>
+
+          <!-- Event Card 2 (Light Yellow) -->
+          <div
+            class="event-card light-yellow"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="event-image img-2"></div>
+            <div class="event-content text-dark">
+              <div class="event-date">
+                <span class="icon-vector dark"></span>
+                <p>28th Saturday, February, 2026</p>
+              </div>
+              <h3 class="event-title">House Officers Orientation Program</h3>
+              <p class="event-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <a href="events.html" class="btn-learn">Learn more</a>
+            </div>
+          </div>
+
+          <!-- Event Card 3 (Light Yellow) -->
+          <div
+            class="event-card light-yellow"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="event-image img-3"></div>
+            <div class="event-content text-dark">
+              <div class="event-date">
+                <span class="icon-vector dark"></span>
+                <p>28th Saturday, February, 2026</p>
+              </div>
+              <h3 class="event-title">House Officers Orientation Program</h3>
+              <p class="event-desc">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <a href="events.html" class="btn-learn">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section (hidden until CMS images are loaded) -->
+      <section id="gallery" class="gallery-section" data-aos="fade-up" style="display:none">
+        <div class="gallery-grid"></div>
+        <div class="gallery-arrows">
+          <a href="gallery.html" title="View Full Gallery">&raquo;</a>
+        </div>
+      </section>
+
+      <!-- News Section -->
+      <section id="news" class="news-section">
+        <div class="marquee-banner bg-blue marquee-container" data-aos="fade-in">
+          <div class="marquee-content reverse">
+            <div class="ellipse-2"></div>
+            <h4 class="marquee-text">ARD STRIKE CALLED OFF - 23RD DECEMEBER</h4>
+            <div class="ellipse-2"></div>
+            <h4 class="marquee-text">ARD STRIKE CALLED OFF - 23RD DECEMEBER</h4>
+            <div class="ellipse-2"></div>
+            <h4 class="marquee-text">ARD STRIKE CALLED OFF - 23RD DECEMEBER</h4>
+            <!-- Duplicate -->
+            <div class="ellipse-2"></div>
+            <h4 class="marquee-text">ARD STRIKE CALLED OFF - 23RD DECEMEBER</h4>
+            <div class="ellipse-2"></div>
+            <h4 class="marquee-text">ARD STRIKE CALLED OFF - 23RD DECEMEBER</h4>
+            <div class="ellipse-2"></div>
+            <h4 class="marquee-text">ARD STRIKE CALLED OFF - 23RD DECEMEBER</h4>
+          </div>
+        </div>
+
+        <!-- News Slider Container -->
+        <div class="news-slider-container" id="news-slider" data-aos="slide-up">
+          <div class="news-card">
+            <h3 class="news-title">Loading News...</h3>
+            <p class="news-desc">Please wait while we fetch the latest news updates.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Subscribe Footer -->
+      <section id="blog" class="subscribe-section" data-aos="fade-up">
+        <div class="footer-container">
+          
+          <!-- LEFT SIDE: Logo and Navigation -->
+          <div class="footer-left">
+            <div class="footer-logo"></div>
+            <ul class="footer-nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="news.html">News & Publications</a></li>
+              <li><a href="events.html">Events</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="blog.html">Health Blog</a></li>
+            </ul>
+          </div>
+          
+          <!-- RIGHT SIDE: Subscribe, Donate, Socials -->
+          <div class="footer-right">
+            <div class="subscribe-content">
+              <form class="subscribe-form" action="https://formspree.io/f/meelweoz" method="POST">
+                <button type="submit" class="btn-subscribe">Subscribe</button>
+                <input
+                  type="email"
+                  name="email"
+                  class="input-subscribe"
+                  placeholder="Enter your email..."
+                  required
+                />
+              </form>
+              
+              <!-- Donation Button -->
+              <div class="donate-wrapper" style="display: flex; justify-content: center; align-items: center;">
+                <a href="#" class="btn-donate">Donate Now</a>
+              </div>
+              <div class="socials">
+                <a href="https://x.com/ArdOauthc" target="_blank" rel="noopener noreferrer" class="social-link">
+                  <img class="social-x-logo" src="media/x-logo.png" alt="X Logo">
+                </a>
+                <a href="https://youtube.com/@ArdOauthc" target="_blank" rel="noopener noreferrer" class="social-link">
+                  <svg width="46" height="46" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="social-yt-logo">
+                    <path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.86-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z" fill="#FF0000"/>
+                    <polygon points="10,15 15.5,12 10,9" fill="white"/>
+                  </svg>
+                </a>
+                <span class="social-text">ardoauthc</span>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      CMS.init({
-        config: {
-          backend: {
-            name: 'github',
-            repo: 'JoelAmahdi/ARD',
-            branch: 'main',
-            base_url: 'https://ard-ebon.vercel.app',
-            auth_endpoint: 'api/auth'
-          },
-          media_folder: 'media',
-          public_folder: 'media',
-          collections: [
-            {
-              name: 'content',
-              label: 'Site Content',
-              files: [
-                {
-                  label: 'News & Publications',
-                  name: 'news',
-                  file: 'content/news.json',
-                  description: 'Manage all the blog posts and news articles',
-                  fields: [
-                    { label: 'Page Title', name: 'page_title', widget: 'string', default: 'News & Publications' },
-                    {
-                      label: 'Posts', name: 'posts', widget: 'list',
-                      fields: [
-                        { label: 'Title', name: 'title', widget: 'string' },
-                        { label: 'Publish Date', name: 'date', widget: 'datetime' },
-                        { label: 'Featured Image', name: 'thumbnail', widget: 'image', required: false },
-                        { label: 'Tag', name: 'tag', widget: 'string', default: 'Official News' },
-                        { label: 'Body', name: 'body', widget: 'markdown' }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  label: 'Events',
-                  name: 'events',
-                  file: 'content/events.json',
-                  description: 'Manage upcoming and concluded events',
-                  fields: [
-                    { label: 'Events Watermark Title', name: 'watermark_title', widget: 'string', default: 'EVENTS' },
-                    {
-                      label: 'Events List', name: 'events_list', widget: 'list',
-                      fields: [
-                        { label: 'Title', name: 'title', widget: 'string' },
-                        { label: 'Date & Time', name: 'date', widget: 'datetime' },
-                        { label: 'Location', name: 'location', widget: 'string', required: false },
-                        { label: 'Description', name: 'description', widget: 'text' },
-                        { label: 'Image', name: 'image', widget: 'image', required: false },
-                        { label: 'Status', name: 'status', widget: 'select', options: ['Upcoming', 'Concluded'] },
-                        { label: 'Calendar Link', name: 'calendar_link', widget: 'string', required: false }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  label: 'Health Blog',
-                  name: 'health_blog',
-                  file: 'content/blog.json',
-                  description: 'Manage health tips and blog posts',
-                  fields: [
-                    { label: 'Page Title', name: 'page_title', widget: 'string', default: 'Health Blog' },
-                    { label: 'Page Subtitle', name: 'page_subtitle', widget: 'string', default: 'Medical insights, practical health tips, and resident experiences.' },
-                    {
-                      label: 'Posts', name: 'posts', widget: 'list',
-                      fields: [
-                        { label: 'Title', name: 'title', widget: 'string' },
-                        { label: 'Publish Date', name: 'date', widget: 'datetime' },
-                        { label: 'Featured Image', name: 'thumbnail', widget: 'image', required: false },
-                        { label: 'Category', name: 'category', widget: 'string', default: 'Health Tips' },
-                        { label: 'Body', name: 'body', widget: 'markdown' }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  label: 'About Page',
-                  name: 'about',
-                  file: 'content/about.json',
-                  description: 'Manage the About Us page content, executives, and members',
-                  fields: [
-                    { label: 'Page Title', name: 'page_title', widget: 'string', default: 'About ARD OAUTHC' },
-                    { label: 'Page Subtitle', name: 'page_subtitle', widget: 'string', default: 'Our history, our people, and our vision for the future.' },
-                    { label: 'History Roll', name: 'history', widget: 'markdown' },
-                    { label: 'Vision', name: 'vision', widget: 'text' },
-                    { label: 'Mission', name: 'mission', widget: 'text' },
-                    {
-                      label: 'Executive Committee', name: 'executives', widget: 'list',
-                      fields: [
-                        { label: 'Name', name: 'name', widget: 'string' },
-                        { label: 'Role', name: 'role', widget: 'string' },
-                        { label: 'Avatar Image', name: 'avatar', widget: 'image', required: false }
-                      ]
-                    },
-                    {
-                      label: 'Life & Honourary Members', name: 'members', widget: 'list',
-                      fields: [
-                        { label: 'Name', name: 'name', widget: 'string' },
-                        { label: 'Achievement/Role', name: 'achievement', widget: 'string' }
-                      ]
-                    },
-                    { label: 'Constitution PDF File', name: 'constitution_pdf', widget: 'file', required: false }
-                  ]
-                },
-                {
-                  label: 'Home Page',
-                  name: 'home',
-                  file: 'content/home.json',
-                  description: 'Manage the hero section and marquees on the home page',
-                  fields: [
-                    { label: 'Hero Subtitle', name: 'hero_subtitle', widget: 'string' },
-                    { label: 'Hero Title', name: 'hero_title', widget: 'string' },
-                    { label: 'Events Marquee Text', name: 'events_marquee_text', widget: 'string', required: false },
-                    { label: 'News Marquee Text', name: 'news_marquee_text', widget: 'string', required: false }
-                  ]
-                },
-                {
-                  label: 'Services Page',
-                  name: 'services',
-                  file: 'content/services.json',
-                  description: 'Manage the services offered',
-                  fields: [
-                    { label: 'Page Title', name: 'page_title', widget: 'string', default: 'Our Services' },
-                    { label: 'Page Subtitle', name: 'page_subtitle', widget: 'text', default: 'Explore the professional services we provide.' },
-                    {
-                      label: 'Services List', name: 'services_list', widget: 'list',
-                      fields: [
-                        { label: 'Service Name', name: 'name', widget: 'string' },
-                        { label: 'Description', name: 'description', widget: 'text' },
-                        { label: 'Image', name: 'image', widget: 'image', required: false },
-                        { label: 'Call to Action Text', name: 'cta_text', widget: 'string' },
-                        { label: 'Call to Action Link (or Phone)', name: 'cta_link', widget: 'string' },
-                        { label: 'Theme', name: 'theme', widget: 'select', options: ['light-yellow', 'dark-yellow'] }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  label: 'Gallery Page',
-                  name: 'gallery',
-                  file: 'content/gallery.json',
-                  description: "Manage the site's image gallery",
-                  fields: [
-                    { label: 'Page Title', name: 'page_title', widget: 'string', default: 'Our Gallery' },
-                    {
-                      label: 'Image Groups', name: 'image_groups', widget: 'list',
-                      fields: [
-                        { label: 'Group Caption', name: 'caption', widget: 'string', hint: 'E.g., AGM 2026, Outreach Program' },
-                        { label: 'Event Date', name: 'date', widget: 'string', required: false, hint: 'E.g., December 15, 2025' },
-                        {
-                          label: 'Images', name: 'images', widget: 'list',
-                          summary: '{{fields.image}}',
-                          field: { label: 'Image', name: 'image', widget: 'image' }
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  label: 'Global Site Config',
-                  name: 'site_config',
-                  file: 'content/site_config.json',
-                  description: 'Manage footer information, social links, etc.',
-                  fields: [
-                    { label: 'X (Twitter) Link', name: 'twitter_link', widget: 'string' },
-                    { label: 'X (Twitter) Username', name: 'twitter_username', widget: 'string' },
-                    { label: 'YouTube Link', name: 'youtube_link', widget: 'string' },
-                    { label: 'YouTube Username', name: 'youtube_username', widget: 'string' },
-                    { label: 'Contact Email', name: 'contact_email', widget: 'string', default: 'info@ardoauthc.com' }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 50
       });
     </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Fetch Home config
+        fetch('content/home.json', { cache: 'no-store' })
+          .then(r => r.ok ? r.json() : null)
+          .then(data => {
+            if(!data) return;
+            if(data.hero_subtitle) document.querySelector('.hero .subtitle').innerHTML = data.hero_subtitle;
+            if(data.hero_title) document.querySelector('.hero .title').innerHTML = data.hero_title;
+          }).catch(console.error);
+
+        // Fetch Events for Homepage (Latest 3 Upcoming)
+        fetch('content/events.json', { cache: 'no-store' })
+          .then(r => r.ok ? r.json() : null)
+          .then(data => {
+            if(!data || !data.events_list) return;
+            // Update watermark if applicable
+            if(data.watermark_title) {
+               const wm = document.querySelector('.events-watermark');
+               if(wm) wm.textContent = data.watermark_title;
+            }
+            const upcoming = data.events_list.filter(e => e.status !== 'Concluded')
+                .sort((a,b) => new Date(a.date) - new Date(b.date));
+            const top3 = upcoming.length > 0 ? upcoming.slice(0, 3) : data.events_list.slice(0, 3);
+            
+            // 1. Dynamic Events Marquee
+            const marqueeContainer = document.querySelector('#events .marquee-content');
+            if (marqueeContainer && top3.length > 0) {
+                const latestEvt = top3[0];
+                const d = new Date(latestEvt.date);
+                const dateStr = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase();
+                const text = `${latestEvt.title.toUpperCase()} - ${dateStr}`;
+                
+                let html = '';
+                for(let i=0; i<6; i++) {
+                    html += `<div class="ellipse-2"></div><h4 class="marquee-text">${text}</h4>`;
+                }
+                marqueeContainer.innerHTML = html;
+            }
+            
+            const listContainer = document.querySelector('.events-list');
+            if(listContainer && top3.length > 0) {
+              listContainer.innerHTML = top3.map((evt, i) => {
+                const dateStr = new Date(evt.date).toLocaleDateString('en-GB', { day: 'numeric', weekday: 'long', month: 'long', year: 'numeric' });
+                const themeClass = i % 2 === 0 ? 'dark-yellow' : 'light-yellow';
+                const darkText = i % 2 === 0 ? '' : 'text-dark';
+                const iconDark = i % 2 === 0 ? '' : 'dark';
+                const imgStyle = evt.image ? `style="background-image: url('${evt.image}');"` : '';
+                return `
+                  <div class="event-card ${themeClass}" data-aos="fade-up" data-aos-delay="${i * 100}">
+                    <div class="event-image img-${i+1}" ${imgStyle}></div>
+                    <div class="event-content ${darkText}">
+                      <div class="event-date">
+                        <span class="icon-vector ${iconDark}"></span>
+                        <p>${dateStr}</p>
+                      </div>
+                      <h3 class="event-title">${evt.title}</h3>
+                      <p class="event-desc">${evt.description}</p>
+                      <a href="event-details.html?title=${encodeURIComponent(evt.title)}" class="btn-learn">Learn more</a>
+                    </div>
+                  </div>
+                `;
+              }).join('');
+            }
+          }).catch(console.error);
+
+        // Fetch News for Homepage
+        fetch('content/news.json', { cache: 'no-store' })
+          .then(r => r.ok ? r.json() : null)
+          .then(data => {
+            if(!data || !data.posts || data.posts.length === 0) return;
+            const sortedPosts = data.posts.sort((a,b) => new Date(b.date) - new Date(a.date));
+            
+            // 1. Live News Ticker (Top 5 latest)
+            const marqueeContainer = document.querySelector('#news .marquee-content');
+            if(marqueeContainer) {
+              const top5Titles = sortedPosts.slice(0, 5).map(p => p.title);
+              const marqueeHtml = top5Titles.map(t => `<div class="ellipse-2"></div><h4 class="marquee-text">${t}</h4>`).join('');
+              marqueeContainer.innerHTML = marqueeHtml + marqueeHtml + marqueeHtml; // Repeat for smooth loop
+            }
+
+            // 2. News Slider
+            const newsSliderContainer = document.querySelector('#news .news-slider-container');
+            if(newsSliderContainer) {
+              const topPostsForSlider = sortedPosts.slice(0, 5);
+              newsSliderContainer.innerHTML = topPostsForSlider.map(post => {
+                const snippet = post.body.substring(0, 150) + '...';
+                const bgStyle = `style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 53.66%, rgba(24, 22, 50, 0.8) 86.83%), url('${post.thumbnail || 'media/news-placeholder.jpg'}');"`;
+                return `
+                  <div class="news-card" ${bgStyle}>
+                    <h3 class="news-title">${post.title}</h3>
+                    <p class="news-desc">${snippet}</p>
+                    <div class="btn-learn-wrapper">
+                      <a href="news-details.html?title=${encodeURIComponent(post.title)}" class="btn-learn">Read More</a>
+                    </div>
+                  </div>
+                `;
+              }).join('');
+            }
+          }).catch(console.error);
+
+        // Fetch Gallery for Homepage — only show section if CMS images exist
+        fetch('content/gallery.json', { cache: 'no-store' })
+          .then(r => r.ok ? r.json() : null)
+          .then(data => {
+            if(!data || !data.image_groups) return;
+            let allImages = [];
+            data.image_groups.forEach(group => {
+               if(group.images) allImages = allImages.concat(group.images);
+            });
+            const top6 = allImages.slice(0, 6);
+            if(top6.length === 0) return; // No images — section stays hidden
+
+            const gridContainer = document.querySelector('.gallery-grid');
+            const gallerySection = document.getElementById('gallery');
+            if(gridContainer && gallerySection) {
+              const gridClasses = [
+                'g-beds',
+                'g-logo',
+                'g-docs',
+                'g-coat',
+                'g-flyer',
+                'g-steth'
+              ];
+
+              gridContainer.innerHTML = top6.map((imgUrl, i) => {
+                const gridClass = gridClasses[i] || '';
+                return `<div class="gallery-block ${gridClass}" style="background-image: url('${imgUrl}');"></div>`;
+              }).join('');
+
+              // Only reveal the section once images are ready
+              gallerySection.style.display = '';
+            }
+          }).catch(console.error);
+      });
+    </script>
+    <script src="script.js"></script>
   </body>
 </html>
