@@ -925,7 +925,7 @@ a.btn-learn {
 
 .footer-brand span {
   font-family: var(--font-heading);
-  font-size: clamp(120px, 18vw, 280px);
+  font-size: clamp(80px, 12vw, 200px);
   font-weight: 900;
   color: rgba(255, 255, 255, 0.15);
   letter-spacing: -4px;
