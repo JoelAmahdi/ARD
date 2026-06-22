@@ -705,16 +705,18 @@ a.btn-learn {
   background: var(--yellow-dark);
 }
 
+/* --- Footer Section (Cocoon-inspired) --- */
 .subscribe-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 68px 0;
-  gap: 30px;
+  padding: 80px 60px 0;
+  gap: 0;
   position: relative;
   width: 100%;
   margin-top: 150px;
-  background: #0b2570;
+  background: #c75c3a;
+  overflow: hidden;
 }
 
 .footer-container {
@@ -727,164 +729,210 @@ a.btn-learn {
   margin: 0 auto;
   gap: 40px;
   padding: 0;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.footer-left {
+/* Footer Column */
+.footer-col {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 20px;
+  gap: 16px;
   flex: 1;
 }
 
-.footer-logo {
-  width: 153px;
-  height: 52px;
-  background-image: url("media/ard%20oau%20logo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-bottom: 20px;
+.footer-col-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 235, 220, 0.7);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  text-transform: none;
 }
 
+/* Navigation */
 .footer-nav {
   list-style: none;
   display: flex;
   flex-direction: column;
   text-align: left;
-  gap: 15px;
+  gap: 10px;
   padding: 0;
   margin: 0;
 }
 
 .footer-nav li a {
-  color: #fff;
+  color: #ffebd8;
   text-decoration: none;
-  font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: 500;
-  transition: color 0.2s;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  transition: color 0.2s, opacity 0.2s;
 }
 
 .footer-nav li a:hover {
-  color: var(--yellow-normal);
+  color: #ffffff;
+  opacity: 0.8;
 }
 
-.footer-right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.subscribe-content {
+/* Connect Links */
+.footer-connect-links {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 8px;
+}
+
+.footer-connect-link {
+  color: #ffebd8;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.footer-connect-link:hover {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+/* CTA Column */
+.footer-col-cta {
+  max-width: 380px;
+}
+
+.footer-cta-text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 235, 220, 0.85);
+}
+
+.footer-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border: 1px solid #ffebd8;
+  border-radius: 30px;
+  color: #ffebd8;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  margin-top: 8px;
+  width: fit-content;
+  background: transparent;
+  box-shadow: none;
+}
+
+.footer-cta-btn:hover {
+  background: #ffebd8;
+  color: #c75c3a;
+  transform: translateY(-2px);
+}
+
+.footer-cta-arrow {
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.footer-cta-btn:hover .footer-cta-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 28px 0;
+}
+
+.footer-copyright {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 235, 220, 0.6);
+}
+
+.footer-bottom-right {
+  display: flex;
   align-items: center;
   gap: 24px;
-  width: 988.8px;
 }
 
-.subscribe-title {
-  font-weight: 500;
-  font-size: 31px;
-  line-height: 120%;
-  text-align: center;
-  color: #ffffff;
-}
-
-.subscribe-form {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; /* keep items vertically centered */
-  gap: 20px;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.input-subscribe {
-  flex: 1;
-  border: none;
-  border-radius: 30px; /* Matches btn-subscribe and btn-learn */
-  padding: 10px 30px; /* adjusted vertical padding to match btn */
-  font-size: 20px;
-  outline: none;
-  width: auto;
-}
-
-.btn-subscribe {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  background: #ffffff;
-  border-radius: 30px; /* Matches btn-learn */
+.footer-terms-link {
   font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 18px;
-  color: #000000;
-  border: none;
-  cursor: pointer;
-  height: 100%;
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.2s ease;
-}
-.btn-subscribe:hover {
-  background: var(--text-dark);
-  color: #ffffff;
-  transform: translateY(-3px);
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 235, 220, 0.6);
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
-.socials {
+.footer-terms-link:hover {
+  color: #ffebd8;
+}
+
+.footer-social-icons {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  padding: 10px;
-  gap: 10px;
+  gap: 14px;
 }
 
-.social-x-logo {
-  border-radius: 6px; /* Slightly round the edges of the square image */
+.footer-social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s, opacity 0.2s;
+  opacity: 0.7;
+}
+
+.footer-social-icon:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.footer-social-icon .social-x-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
   object-fit: cover;
 }
 
-.social-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+.footer-social-icon svg {
+  width: 22px;
+  height: 22px;
 }
 
-.social-link:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
+/* Large Brand Text */
+.footer-brand {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-bottom: 0;
+  line-height: 0.85;
 }
 
-.social-x-logo,
-.social-yt-logo {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.2s ease;
-}
-
-.social-link:hover .social-x-logo,
-.social-link:hover .social-yt-logo {
-  transform: scale(1.05);
-}
-
-.social-text {
-  font-weight: 500;
-  font-size: 20px;
-  color: #ffffff;
+.footer-brand span {
+  font-family: var(--font-heading);
+  font-size: clamp(120px, 18vw, 280px);
+  font-weight: 900;
+  color: #ffebd8;
+  letter-spacing: -4px;
+  display: block;
+  text-align: left;
+  white-space: nowrap;
+  transform: translateY(8%);
 }
 
 /* --- About Page Styles --- */
@@ -1511,12 +1559,12 @@ a.btn-learn {
     width: 100%;
   }
 
-  /* Subscribe Section */
-  .subscribe-content {
-    width: 90%;
+  /* Footer Section */
+  .footer-container {
+    flex-wrap: wrap;
   }
-  .subscribe-form {
-    width: 100%;
+  .footer-col-cta {
+    max-width: 100%;
   }
 }
 
@@ -1678,42 +1726,42 @@ a.btn-learn {
     height: 250px;
   }
 
-  /* Subscribe & Footer Section */
+  /* Footer Section */
+  .subscribe-section {
+    padding: 50px 24px 0;
+  }
+
   .footer-container {
     flex-direction: column;
-    align-items: center;
-    gap: 50px;
-    padding: 0 20px;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 0;
+    padding-bottom: 40px;
   }
-  
-  .footer-left {
-    align-items: center;
-  }
-  
-  .footer-nav {
-    align-items: center;
-    text-align: center;
-  }
-  
-  .footer-right {
-    justify-content: center;
+
+  .footer-col {
     width: 100%;
   }
 
-  .subscribe-content {
-    align-items: center;
+  .footer-col-cta {
+    max-width: 100%;
   }
 
-  .subscribe-form {
+  .footer-bottom {
     flex-direction: column;
-    width: 100%;
-    gap: 15px;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 24px 0;
   }
-  .btn-subscribe {
+
+  .footer-bottom-right {
     width: 100%;
+    justify-content: space-between;
   }
-  .input-subscribe {
-    width: 100%;
+
+  .footer-brand span {
+    font-size: clamp(70px, 16vw, 140px);
+    letter-spacing: -2px;
   }
 }
 
@@ -1831,6 +1879,112 @@ a.btn-learn {
 
 .bank-details-box p:last-child {
   margin-bottom: 0;
+}
+
+/* --- Share Buttons --- */
+.share-buttons {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.share-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.share-btn:active {
+  transform: translateY(0);
+}
+
+.share-btn svg {
+  flex-shrink: 0;
+}
+
+.share-btn--whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+
+.share-btn--whatsapp:hover {
+  background: #1da851;
+}
+
+.share-btn--copy {
+  background: var(--blue-dark);
+  color: #fff;
+}
+
+.share-btn--copy:hover {
+  background: #0d3090;
+}
+
+.share-btn--copy.copied {
+  background: var(--yellow-dark);
+}
+
+/* Compact variant for listing cards */
+.share-buttons--compact .share-btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  gap: 4px;
+  border-radius: 16px;
+}
+
+.share-buttons--compact .share-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Share toast notification */
+.share-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--blue-dark);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  z-index: 10000;
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  pointer-events: none;
+  box-shadow: 0 8px 24px rgba(11, 37, 112, 0.3);
+}
+
+.share-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 768px) {
+  .share-buttons {
+    gap: 6px;
+  }
+  .share-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
 }
 
 /* --- END OF STYLES --- */
