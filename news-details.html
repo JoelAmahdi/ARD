@@ -50,6 +50,7 @@
         </div>
 
         <!-- CMS JSON Fetch Script -->
+        <script src="script.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const params = new URLSearchParams(window.location.search);
@@ -86,6 +87,8 @@
                         
                         const article = document.createElement('article');
                         article.className = 'blog-post';
+                        const shareUrl = window.location.href;
+                        
                         article.innerHTML = `
                             ${post.thumbnail ? `<div class="post-img" style="background-image: url('${post.thumbnail}');"></div>` : ''}
                             <div class="post-content">
@@ -93,6 +96,9 @@
                                 <h2 class="post-title" style="margin-bottom: 40px">${post.title}</h2>
                                 <div class="post-body">
                                     ${bodyHtml}
+                                </div>
+                                <div style="margin-top: 30px; display: flex; justify-content: center;">
+                                    ${ARDShare.buttonsHTML(post.title, shareUrl)}
                                 </div>
                                 <div style="margin-top: 50px; text-align: center;">
                                     <a href="news.html" style="color: var(--blue-dark); text-decoration: underline; font-weight: 500; font-size: 18px;">&larr; Back to News</a>

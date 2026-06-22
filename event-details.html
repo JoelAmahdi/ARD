@@ -99,6 +99,8 @@
                         const rawDesc = event.description || '';
                         const descHtml = rawDesc.split('\n').map(p => p.trim() ? `<p style="margin-bottom: 1em; line-height: 1.6; font-size: 18px; color: #333;">${p}</p>` : '').join('');
 
+                        const shareUrl = window.location.href;
+                        
                         let html = `
                         <div style="max-width: 900px; margin: 0 auto; background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); text-align: left;">
                             ${imgHtml}
@@ -111,9 +113,12 @@
                             <div class="event-details-body">
                                 ${descHtml}
                             </div>
-                            <div style="margin-top: 40px; text-align: center;">
+                            <div style="margin-top: 40px; text-align: center; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; align-items: center;">
                                 ${event.calendar_link ? `<a href="${event.calendar_link}" target="_blank" class="btn-learn" style="background: var(--blue-dark); color: #fff; border: none; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: 500; font-size: 18px; display: inline-block;">Add to Google Calendar</a>` : ''}
-                                <a href="events.html" style="color: var(--blue-dark); text-decoration: underline; margin-left: 20px; font-weight: 500; font-size: 18px;">&larr; Back to Events</a>
+                                <a href="events.html" style="color: var(--blue-dark); text-decoration: underline; font-weight: 500; font-size: 18px;">&larr; Back to Events</a>
+                            </div>
+                            <div style="margin-top: 25px; display: flex; justify-content: center;">
+                                ${ARDShare.buttonsHTML(event.title, shareUrl)}
                             </div>
                         </div>`;
                         
