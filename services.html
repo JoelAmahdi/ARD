@@ -179,8 +179,10 @@
                   ? 'margin-top: 20px; font-family: var(--font-body); border: 1px solid var(--text-dark); background: transparent; padding: 10px 20px; font-weight: 500; font-size: 18px;'
                   : 'margin-top: 20px; border: none;';
                   
+                const slug = svc.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                  
                 return `
-                  <div class="event-card ${themeClass}" data-aos="fade-up" data-aos-delay="${i * 100}">
+                  <div class="event-card ${themeClass}" id="${slug}" data-aos="fade-up" data-aos-delay="${i * 100}">
                     <div class="event-image" style="${imgStyle}"></div>
                     <div class="event-content ${darkText}">
                       <h3 class="event-title" style="font-size: 32px; ${titleColor}">${svc.name}</h3>

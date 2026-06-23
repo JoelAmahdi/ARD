@@ -218,9 +218,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
-  width: 934px;
-  height: 813px;
+  padding: 0px 20px;
+  width: 100%;
+  max-width: 934px;
+  height: auto;
   z-index: 5;
 }
 
@@ -229,14 +230,16 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 0px;
-  width: 902px;
-  height: 242px;
+  width: 100%;
+  max-width: 902px;
+  height: auto;
   margin: 20px 0px 0px 0px;
   z-index: 2;
 }
 
 .subtitle {
-  width: 514px;
+  width: 100%;
+  max-width: 514px;
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
@@ -246,7 +249,8 @@ body {
 }
 
 .title {
-  width: 882px;
+  width: 100%;
+  max-width: 882px;
   font-weight: 900;
   font-size: 100px;
   line-height: 1.1;
@@ -263,13 +267,15 @@ body {
   align-items: center;
   padding: 10px;
   gap: 10px;
-  width: 934px;
-  height: 1158px;
+  width: 100%;
+  max-width: 934px;
+  height: auto;
   z-index: 1;
 }
 
 .main-image {
-  width: 894px;
+  width: 100%;
+  max-width: 894px;
   height: 600px;
   background: url("media/media__1772234518036.png")
     center/contain no-repeat;

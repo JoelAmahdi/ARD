@@ -211,3 +211,27 @@ const ARDShare = {
 
     _toastTimeout: null
 };
+
+// Dynamically populate Services dropdown in navigation
+document.addEventListener('DOMContentLoaded', () => {
+    const baseUrl = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+    fetch(baseUrl + 'content/services.json', { cache: 'no-store' })
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+            if (data && data.services_list) {
+                // Find all dropdowns for "Services" in the nav
+                const navLinks = document.querySelectorAll('.nav .nav-link');
+                navLinks.forEach(link => {
+                    if (link.textContent.trim() === 'Services') {
+                        const dropdownContent = link.nextElementSibling;
+                        if (dropdownContent && dropdownContent.classList.contains('dropdown-content')) {
+                            dropdownContent.innerHTML = data.services_list.map(svc => {
+                                const slug = svc.name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                                return `<a href="services.html#${slug}">${svc.name}</a>`;
+                            }).join('');
+                        }
+                    }
+                });
+            }
+        }).catch(err => console.error('Error fetching services for dropdown:', err));
+});
