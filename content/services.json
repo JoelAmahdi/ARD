@@ -22,7 +22,7 @@
       "name": "Laundry",
       "description": "Do you need your fabrics clean and neatly ironed? Yes.\nVisit our laundry shop at LBH.  We are there to serve you better. ",
       "image": "media/dry-cleaning-near-me.jpg",
-      "cta_text": " For more information, contact",
+      "cta_text": "contact",
       "cta_link": "08146185506",
       "theme": "dark-yellow"
     },
@@ -38,7 +38,7 @@
       "name": "LEKAN BADRU HALL",
       "description": "For your conferences, birthday parties, weddings, seminars, retreats.\nOur hall is available to accommodate whatever program you plan to have, and we will give you top-notch service. A trial will convince you.",
       "image": "media/elegant-minimalistic-architecture-and-interior-design-for-the-function-hall-of-vedant-banquets-_.jpg",
-      "cta_text": "CAL",
+      "cta_text": "call",
       "cta_link": "08146185506",
       "theme": "dark-yellow"
     }
