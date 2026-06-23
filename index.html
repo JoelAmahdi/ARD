@@ -330,7 +330,7 @@
                       <p class="event-desc">${evt.description}</p>
                       <a href="event-details.html?title=${encodeURIComponent(evt.title)}" class="btn-learn">Learn more</a>
                       <div style="margin-top: 12px; margin-bottom: 12px;">
-                        ${ARDShare.buttonsHTML(evt.title, window.location.origin + '/event-details.html?title=' + encodeURIComponent(evt.title), true)}
+                        ${ARDShare.buttonsHTML(evt.title, window.location.origin + '/event-details.html?title=' + encodeURIComponent(evt.title), true, 'event')}
                       </div>
                     </div>
                   </div>
@@ -369,7 +369,7 @@
                       <a href="news-details.html?title=${encodeURIComponent(post.title)}" class="btn-learn">Read More</a>
                     </div>
                     <div style="margin-top: 12px; display: flex; justify-content: center;">
-                      ${ARDShare.buttonsHTML(post.title, window.location.origin + '/news-details.html?title=' + encodeURIComponent(post.title), true)}
+                      ${ARDShare.buttonsHTML(post.title, window.location.origin + '/news-details.html?title=' + encodeURIComponent(post.title), true, 'news')}
                     </div>
                   </div>
                 `;

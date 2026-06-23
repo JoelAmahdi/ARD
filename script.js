@@ -181,15 +181,23 @@ const ARDShare = {
     /**
      * Generate share buttons HTML
      * @param {string} title - The post/event title
-     * @param {string} url - Full URL to share
+     * @param {string} url - Full URL to share (for Copy Link)
      * @param {boolean} compact - Use compact variant for card listings
+     * @param {string} shareType - 'news' or 'event' for share.php OG tags
      */
-    buttonsHTML(title, url, compact = false) {
+    buttonsHTML(title, url, compact = false, shareType = '') {
         const escapedTitle = title.replace(/'/g, "\\'").replace(/"/g, '&quot;');
         const escapedUrl = url.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        
+        let waUrl = url;
+        if (shareType) {
+            const baseUrl = window.location.origin + window.location.pathname.replace(/\/[^\/]*$/, '/');
+            waUrl = baseUrl + 'share.php?type=' + encodeURIComponent(shareType) + '&title=' + encodeURIComponent(title);
+        }
+
         return `
             <div class="share-buttons ${compact ? 'share-buttons--compact' : ''}">
-                <a href="https://wa.me/?text=${encodeURIComponent(title + '\n' + url)}" 
+                <a href="https://wa.me/?text=${encodeURIComponent(title + '\n' + waUrl)}" 
                    target="_blank" rel="noopener noreferrer"
                    class="share-btn share-btn--whatsapp" title="Share on WhatsApp">
                     ${ARDShare.whatsappIcon} WhatsApp
