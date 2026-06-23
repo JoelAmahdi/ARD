@@ -1,21 +1,29 @@
 {
   "page_title": "Our Services",
-  "page_subtitle": "Explore the professional services we provide.",
+  "page_subtitle": "The ARDOAUTHC CBV arm is here to serve you better.",
   "services_list": [
     {
-      "name": "ECG Services",
-      "description": "We offer professional and accurate Electrocardiogram (ECG) services. Our state-of-the-art equipment and highly trained medical staff ensure reliable cardiac monitoring and diagnostics for all patients.",
-      "image": "https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=353&fit=crop",
+      "name": "ECG Services IHU",
+      "description": "We are pleased to announce the acquisition of brand-new 12-channel ECG machines at the Accident and Emergency departments in IHU and WGH. These machines will operate 24/7, providing enhanced patient care. Please contact ",
+      "image": "media/ekg_ecg.jpg",
       "cta_text": "📞 Contact Us",
-      "cta_link": "tel:+2340000000000",
+      "cta_link": "08163632797",
       "theme": "light-yellow"
     },
     {
-      "name": "ARD Business",
-      "description": "Explore our directory of professional businesses and services for hire. Find trusted partners for your healthcare, event, or organizational needs.",
-      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=353&fit=crop",
-      "cta_text": "View Businesses",
-      "cta_link": "ard-business.html",
+      "name": "ECG Services WGH",
+      "cta_link": "09067555681",
+      "cta_text": "📞 Contact Us",
+      "description": "We are pleased to announce the acquisition of brand-new 12-channel ECG machines at the Accident and Emergency departments in IHU and WGH. These machines will operate 24/7, providing enhanced patient care. Please contact ",
+      "image": "media/ekg_ecg.jpg",
+      "theme": "dark-yellow"
+    },
+    {
+      "name": "Laundry",
+      "description": "Do you need your fabrics clean and neatly ironed? Yes.\nVisit our laundry shop at LBH.  We are there to serve you better. ",
+      "image": "media/dry-cleaning-near-me.jpg",
+      "cta_text": " For more information, contact",
+      "cta_link": "08146185506",
       "theme": "dark-yellow"
     },
     {
@@ -25,6 +33,14 @@
       "cta_text": "📞 Contact for Booking",
       "cta_link": "tel:+2340000000000",
       "theme": "light-yellow"
+    },
+    {
+      "name": "LEKAN BADRU HALL",
+      "description": "For your conferences, birthday parties, weddings, seminars, retreats.\nOur hall is available to accommodate whatever program you plan to have, and we will give you top-notch service. A trial will convince you.",
+      "image": "media/elegant-minimalistic-architecture-and-interior-design-for-the-function-hall-of-vedant-banquets-_.jpg",
+      "cta_text": "CAL",
+      "cta_link": "08146185506",
+      "theme": "dark-yellow"
     }
   ]
 }
